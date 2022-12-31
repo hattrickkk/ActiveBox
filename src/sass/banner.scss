@@ -1,0 +1,109 @@
+@use 'variable.scss' as *;
+
+.banner {
+	background: linear-gradient(rgba(37, 43, 73, 0.8), rgba(37, 43, 73, 0.8)), url("../images/banner/banner_background.jpg") center/cover no-repeat;
+	padding: 230px 0 120px 0;
+
+	&__header {
+		text-align: center;
+		color: $white;
+		margin: 0 0 80px 0;
+	}
+
+	&__title {
+		text-align: center;
+		text-transform: uppercase;
+		margin: 0 0 31px 0;
+		@include title(900, 64px, 75px);
+	}
+
+	&__subtitle {
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	&__wrapper-button {
+		width: 100%;
+	}
+
+	&__button {
+		@include btn;
+	}
+}
+
+@media screen and (max-width:1024px) {
+	.banner {
+		padding: 257px 0 126px 0;
+
+		&__header {
+			margin: 0 0 89px 0;
+		}
+
+		&__title {
+			@include title(900, 48px, 56px);
+			margin: 0 0 61px 0;
+		}
+
+		&__subtitle {
+			@include title(400, 18px, 21px);
+		}
+
+		&__button {
+			@include btn-media1024;
+		}
+	}
+}
+
+@media screen and (max-width:768px) {
+	.banner {
+		padding: 180px 0 80px 0;
+
+		&__header {
+			margin: 0 0 60px 0;
+		}
+
+		&__title {
+			margin: 0 0 40px 0;
+		}
+
+		&__button {
+			@include btn-media320;
+		}
+	}
+}
+
+@media screen and (max-width:500px) {
+	.banner {
+		&__title {
+			@include title(900, 36px, 42px);
+		}
+	}
+}
+
+@media screen and (max-width:370px) {
+	.banner {
+		padding: 130px 0 52px 0;
+	}
+}
+
+@media screen and (max-width:320px) {
+	.banner {
+		padding: 116px 0 52px 0;
+
+		&__header {
+			margin: 0 0 50px 0;
+		}
+
+		&__title {
+			margin: 0 0 31px 0;
+		}
+
+		&__subtitle {
+			@include title(400, 14px, 16px);
+		}
+
+		&__button {
+			@include btn-media320;
+		}
+	}
+}

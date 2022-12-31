@@ -1,0 +1,123 @@
+@use 'variable.scss' as *;
+
+.features {
+	padding: 115px 0;
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -17px;
+	}
+
+	.item {
+		flex: 0 1 33.333%;
+		padding: 0 17px;
+
+		&__inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+		}
+
+		&__pic {
+			margin: 0 0 30px 0;
+			max-width: 100px;
+			padding: 10px;
+			flex: 1 1 auto;
+		}
+
+		&__pic img {
+			width: 100%;
+		}
+
+		&__title {
+			@include title(900, 24px, 28px);
+			text-transform: uppercase;
+			color: $black;
+			margin: 0 0 30px 0;
+			text-align: center;
+		}
+
+		&__text {
+			color: $gray;
+			text-align: center;
+		}
+	}
+
+	.item:nth-child(1),
+	.item:nth-child(2),
+	.item:nth-child(3) {
+		margin: 0 0 87px 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.features {
+		padding: 80px 0;
+
+		.item {
+			&__title {
+				font-size: 18px;
+				line-height: 21px;
+				margin: 0 0 20px 0;
+			}
+
+			&__pic {
+				margin: 0 0 20px 0;
+				max-width: 85px;
+			}
+		}
+
+		.item:nth-child(1),
+		.item:nth-child(2),
+		.item:nth-child(3) {
+			margin: 0 0 50px 0;
+		}
+
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.features {
+		.item {
+			flex: 0 1 50%;
+		}
+
+		.item:nth-child(1),
+		.item:nth-child(2),
+		.item:nth-child(3),
+		.item:nth-child(4) {
+			margin: 0 0 40px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.features {
+		padding: 30px 0 40px 0;
+
+		.item {
+			flex: 0 1 100%;
+		}
+
+		.item:not(:last-child) {
+			margin: 0 0 40px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.features {
+		.item {
+			&__title {
+				margin: 0 0 15px 0;
+			}
+
+			&__pic {
+				margin: 0 0 10px 0;
+				max-width: 75px;
+			}
+		}
+	}
+}

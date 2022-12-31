@@ -1,0 +1,133 @@
+@use 'variable.scss' as *;
+
+.footer {
+	background-color: $blue;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__top {
+		padding: 70px 0 67px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 -15px;
+	}
+
+	&__column {
+		flex: 0 1 33.333%;
+		padding: 0 15px;
+		color: $white;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0 0 30px 0;
+	}
+
+	&__socials-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1 1 auto;
+	}
+
+	&__socials {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__socials img {
+		max-width: 100%;
+	}
+
+	&__socials> :nth-child(2) {
+		margin: 0 14px;
+	}
+
+	&__socials-facebook,
+	&__socials-linkedin,
+	&__socials-twitter {
+		@include socials;
+	}
+
+	&__socials>*:hover {
+		@include socials-hover($white);
+	}
+
+	&__bottom {
+		padding: 24px 0;
+		background-color: $dark-blue;
+		text-align: center;
+		width: 100vw;
+	}
+
+	&__bottom-text span {
+		color: $white;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.footer {
+		&__top {
+			padding: 47px 0 41px 0;
+		}
+
+		&__title {
+			margin: 0 0 16px 0;
+		}
+
+		&__socials> :nth-child(2) {
+			margin: 0 11.5px;
+		}
+
+		&__socials-facebook,
+		&__socials-linkedin,
+		&__socials-twitter {
+			@include socials-media1024;
+		}
+
+		&__bottom {
+			padding: 15px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 678px) {
+	.footer {
+		&__column {
+			flex: 0 1 100%;
+		}
+
+		&__column:not(:last-child) {
+			margin: 0 0 60px 0;
+		}
+
+		&__title {
+			margin: 0 0 35px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.footer {
+		&__top {
+			padding: 34px 0;
+		}
+
+		&__bottom {
+			padding: 29px 0 28px 0;
+		}
+
+		&__socials> :nth-child(2) {
+			margin: 0 8px;
+		}
+	}
+}

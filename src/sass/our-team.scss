@@ -1,0 +1,185 @@
+@use 'variable.scss' as *;
+
+.our-team {
+	padding: 114px 0;
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+	}
+
+	.item {
+		flex: 0 1 25%;
+		padding: 0 15px;
+
+		&__inner {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__pic {
+			margin: 0 0 30px 0;
+		}
+
+		&__pic img {
+			max-width: 100%;
+		}
+
+		&__info {
+			margin: 0 0 37px 0;
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__title {
+			font-weight: 700;
+			color: $black;
+			font-size: 24px;
+			line-height: 28px;
+			margin: 0 0 5px 0;
+		}
+
+		&__subtitle {
+			color: $red;
+			text-transform: uppercase;
+			margin: 0 0 17.5px 0;
+			flex: 1 1 auto;
+		}
+
+		&__socials {
+			display: flex;
+		}
+
+		&__socials img {
+			max-width: 100%;
+		}
+
+		&__socials> :nth-child(2) {
+			margin: 0 6px;
+		}
+
+		&__socials-facebook,
+		&__socials-linkedin,
+		&__socials-twitter {
+			@include socials;
+		}
+
+		&__socials>*:hover {
+			@include socials-hover($blue);
+		}
+	}
+}
+
+@media screen and (max-width:1024px) {
+	.our-team {
+		padding: 78px 0;
+
+		.item {
+			&__pic {
+				margin: 0 0 25px 0;
+			}
+
+			&__title {
+				font-size: 18px;
+				line-height: 21px;
+				margin: 0 0 4.5px 0;
+			}
+
+			&__subtitle {
+				margin: 0 0 22.5px 0;
+			}
+
+			&__socials-facebook,
+			&__socials-linkedin,
+			&__socials-twitter {
+				@include socials-media1024;
+			}
+		}
+	}
+}
+
+@media screen and (max-width:860px) {
+	.our-team {
+		&__inner {
+			justify-content: center;
+			margin: 0 -30px;
+		}
+
+		.item {
+			flex: 0 1 50%;
+			max-width: 350px;
+			padding: 0 30px;
+		}
+
+		.item:nth-child(1),
+		.item:nth-child(2) {
+			margin: 0 0 60px 0;
+		}
+	}
+}
+
+@media screen and (max-width:650px) {
+	.our-team {
+		&__inner {
+			margin: 0 -15px;
+		}
+
+		.item {
+			padding: 0 15px;
+		}
+
+		.item:nth-child(1),
+		.item:nth-child(2) {
+			margin: 0 0 50px 0;
+		}
+	}
+}
+
+@media screen and (max-width:500px) {
+	.our-team {
+		padding: 50px 0;
+
+		.item {
+			flex: 0 1 100%;
+
+			&__info {
+				margin: 0 0 30px 0;
+			}
+
+			&__socials-facebook,
+			&__socials-linkedin,
+			&__socials-twitter {
+				@include socials-media320;
+			}
+		}
+
+		.item:not(:last-child) {
+			margin: 0 0 60px 0;
+		}
+	}
+}
+
+@media screen and (max-width:360px) {
+	.our-team {
+		padding: 40px 0 40px 0;
+
+		.item {
+			&__pic img {
+				width: 100%;
+				aspect-ratio: 4/3;
+				object-fit: cover;
+			}
+
+			&__subtitle {
+				margin: 0 0 38px 0;
+			}
+
+			&__info {
+				margin: 0 0 35px 0;
+			}
+		}
+	}
+}

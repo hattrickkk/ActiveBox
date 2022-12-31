@@ -1,0 +1,117 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header__inner {
+  min-height: 100px;
+  border-bottom: 1px solid #BABBC5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__logo {
+  max-width: 183px;
+  max-height: 26px;
+  padding: 0 30px 0 0;
+}
+.header__logo img {
+  width: 100%;
+}
+.header__menu {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.header .menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header .menu__link {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 40px 35px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.header .menu__link:hover::after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: #BABBC5;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__inner {
+    min-height: 80px;
+  }
+  .header .menu__link {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 33px 30px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .header .menu__link {
+    padding: 33px 25px;
+  }
+}
+@media screen and (max-width: 806px) {
+  .header__inner {
+    border: none;
+  }
+  .header__burger {
+    cursor: pointer;
+  }
+  .header__burger span {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+  }
+  .header__burger span::after, .header__burger span::before {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+  }
+  .header__burger span::after {
+    top: 10px;
+  }
+  .header__burger span::before {
+    bottom: 10px;
+  }
+  .header__menu {
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0 0 0;
+    background-color: rgb(45, 61, 114);
+    position: absolute;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+  .header__burger.active {
+    z-index: 30;
+  }
+}

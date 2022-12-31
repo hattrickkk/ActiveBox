@@ -1,0 +1,72 @@
+$red: rgba(255, 67, 67, 1);
+$dark_red :#E71414;
+$white: #fff;
+$black: #2D3033;
+$dark-black: #000000;
+$gray: #6C7279;
+$light-gray: #C6CBCD;
+$purple: #5C3249;
+$blue: #353C65;
+$dark-blue: #2C3154;
+
+@mixin btn {
+	background-color: $red;
+	color: $white;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 30px 40px 32px;
+	max-width: 370px;
+	margin: 0 auto;
+	transition: 0.3s;
+}
+
+@mixin btn-media1024 {
+	padding: 25px 40px 27px;
+	max-width: 314px;
+}
+
+@mixin btn-media320 {
+	padding: 15px 40px 17px;
+	max-width: 280px;
+}
+
+@mixin title($fw, $fz, $lh) {
+	font-weight: $fw;
+	font-size: $fz;
+	line-height: $lh;
+}
+
+@mixin socials {
+	flex: 0 0 40px;
+	max-height: 40px;
+	border: 1px solid $light-gray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	transition: all 0.3s;
+}
+
+@mixin socials-hover($color) {
+	background-color: $color;
+	border-color: $color;
+	transform: scale(1.1);
+}
+
+@mixin socials-media1024 {
+	max-width: 32px;
+	max-height: 32px;
+	padding: 8px;
+}
+
+@mixin socials-media320 {
+	max-width: none;
+	max-height: none;
+	padding: 10px;
+}
